@@ -10,8 +10,6 @@
 footer{
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
     background-color: grey;
     padding: 1rem; 
     width: 100%;
@@ -20,7 +18,6 @@ p{
     color: white;
     font-size: 1.2rem;
     text-align: center;
-   
 }
 
 </style>

@@ -10,8 +10,10 @@ Vue.component('app-component', require('./components/App.vue').default);
 // import routers from './router.js'
 
 
-import Home from './components/Home.vue'
-import About from './components/About.vue'
+import Home from './components/pages/Home.vue'
+import About from './components/pages/About.vue'
+import Services from './components/pages/Services.vue'
+import Contact from './components/pages/Contact.vue'
 
 const routes =[ 
     {
@@ -23,7 +25,17 @@ const routes =[
     path : '/about',
     component: About,
     name:'about'
-    }
+    },
+    {
+    path : '/services',
+    component: Services,
+    name: 'services'
+    },
+    {
+    path : '/contact',
+    component: Contact,
+    name:'contact'
+    },
 ];
 
 
