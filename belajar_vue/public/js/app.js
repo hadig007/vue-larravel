@@ -502,6 +502,14 @@ __webpack_require__.r(__webpack_exports__);
     ListEight: _App8_vue__WEBPACK_IMPORTED_MODULE_7__.default,
     ListNine: _App9_vue__WEBPACK_IMPORTED_MODULE_8__.default,
     ListTen: _App10_vue__WEBPACK_IMPORTED_MODULE_9__.default
+  },
+  data: function data() {
+    return {
+      data: {
+        title: 'title percobaan',
+        hasil: 'dan ya berhasil sesuai rencana, alhamdulillah'
+      }
+    };
   }
 });
 
@@ -578,7 +586,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nhtml{\r\n    font-family: sans-serif;\r\n    min-height: 100%;\n}\nbody{\r\n    padding: 0;\r\n    margin: 0;\r\n    background-color: rgba(214, 214, 214, 0.363);\n}\n.container{\r\n    background-color: white;\r\n    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0,0.4px);\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nhtml{\r\n    font-family: sans-serif;\r\n    min-height: 100%;\n}\nbody{\r\n    padding: 0;\r\n    margin: 0;\r\n    background-color: rgba(214, 214, 214, 0.363);\n}\n.pembungkus{\r\n    display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\n}\n.container{\r\n    background-color: white;\r\n    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0,0.4px);\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -626,7 +634,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nfooter[data-v-61a7c374]{\r\n    position: absolute;\r\n    bottom: 0;\r\n    background-color: grey;\r\n    padding: 1rem; \r\n    width: 100%;\n}\np[data-v-61a7c374]{\r\n    color: white;\r\n    font-size: 1.2rem;\r\n    text-align: center;\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ndiv[data-v-61a7c374]{\r\n    height: auto;\n}\nfooter[data-v-61a7c374]{\r\n    /* position: static;\r\n    bottom: 0; */\r\n    background-color: grey;\r\n    padding: 1rem; \r\n    width: 100%;\n}\np[data-v-61a7c374]{\r\n    color: white;\r\n    font-size: 1.2rem;\r\n    text-align: center;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2584,7 +2592,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("h1", [_vm._v("Home Page")]), _vm._v(" "), _c("app-list")],
+    [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Home Page")]),
+      _vm._v(" "),
+      _c("app-list")
+    ],
     1
   )
 }
@@ -3171,12 +3183,12 @@ var render = function() {
               [
                 _c("list-ten", {
                   staticClass: "card-title",
-                  attrs: { title: "Post-3" }
+                  attrs: { title: _vm.data.title }
                 }),
                 _vm._v(" "),
                 _c("list-ten", {
                   staticClass: "card-text",
-                  attrs: { content: "ini adalah content untuk post ketiga" }
+                  attrs: { content: _vm.data.hasil }
                 })
               ],
               1

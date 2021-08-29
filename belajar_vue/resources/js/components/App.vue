@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <app-bar></app-bar>
         <div class="container">
         <router-view></router-view>
@@ -28,6 +28,11 @@ body{
     padding: 0;
     margin: 0;
     background-color: rgba(214, 214, 214, 0.363);
+}
+.pembungkus{
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .container{
     background-color: white;

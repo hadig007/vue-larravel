@@ -7,9 +7,12 @@
 </template>
 
 <style scoped>
+div{
+    height: auto;
+}
 footer{
-    position: absolute;
-    bottom: 0;
+    /* position: static;
+    bottom: 0; */
     background-color: grey;
     padding: 1rem; 
     width: 100%;

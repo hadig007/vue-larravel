@@ -67,8 +67,8 @@
                 <div class="col-md-6">
                     <div class="card m-3">
                         <div class="card-body">
-                            <list-ten class="card-title" title="Post-3"></list-ten>
-                            <list-ten class="card-text" content="ini adalah content untuk post ketiga"></list-ten>
+                            <list-ten class="card-title" :title="data.title"></list-ten>
+                            <list-ten class="card-text" :content="data.hasil"></list-ten>
                         </div>
                     </div>
                 </div>
@@ -100,6 +100,14 @@ export default {
         ListEight,
         ListNine,
         ListTen,
+    },
+    data(){
+        return{
+            data : {
+                title: 'title percobaan',
+                hasil : 'dan ya berhasil sesuai rencana, alhamdulillah'
+            }
+        }
     }
 }
 </script>
