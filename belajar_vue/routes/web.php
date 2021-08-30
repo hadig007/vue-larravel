@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('{path}', function () {
+Route::get('{any}', function () {
     return view('welcome');
-})->where( 'path', '[\/\w\.-]*' );
+})->where( 'any', '[\/\w\.-]*' );

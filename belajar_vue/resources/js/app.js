@@ -1,9 +1,11 @@
 
 window.Vue = require('vue').default;
+window.axios = require('axios');
 
 import Vue from 'vue/dist/vue.js';
 import VueRouter from 'vue-router'
 Vue.use('Vue')
+const axios = require('axios');
 Vue.use(VueRouter)
 
 Vue.component('app-component', require('./components/App.vue').default);

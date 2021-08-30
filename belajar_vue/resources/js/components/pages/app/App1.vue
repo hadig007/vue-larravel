@@ -1,11 +1,7 @@
 <template>
-    <div>
-        <h4>
-            {{ title }}
-        </h4>
-        <p>
-            {{ content }}
-        </p>
+    <div class="card m-3 p-0">
+        <h3 class="card-title text-center">{{ title }}</h3>
+        <p class="card-body">{{ content }}</p>
     </div>
 </template>
 
