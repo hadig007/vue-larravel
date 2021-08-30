@@ -9,6 +9,7 @@ const axios = require('axios');
 Vue.use(VueRouter)
 
 Vue.component('app-component', require('./components/App.vue').default);
+Vue.component('footer-component', require('./components/Footer.vue').default);
 // import routers from './router.js'
 
 
@@ -17,6 +18,7 @@ import About from './components/pages/About.vue'
 import Services from './components/pages/Services.vue'
 import Contact from './components/pages/Contact.vue'
 import Post from './components/pages/app/post/Post.vue'
+
 
 const routes =[ 
     {

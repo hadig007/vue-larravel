@@ -1846,7 +1846,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Appbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Appbar.vue */ "./resources/js/components/Appbar.vue");
-/* harmony import */ var _Footer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer.vue */ "./resources/js/components/Footer.vue");
 //
 //
 //
@@ -1856,13 +1855,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    AppBar: _Appbar_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    TheFooter: _Footer_vue__WEBPACK_IMPORTED_MODULE_1__.default
+    AppBar: _Appbar_vue__WEBPACK_IMPORTED_MODULE_0__.default
   }
 });
 
@@ -1952,6 +1948,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['title', 'content', 'id']
 });
@@ -1988,6 +1986,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1996,8 +1995,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       posts: null,
-      id: null,
-      columns: 3
+      // id : null,
+      columns: 3,
+      isLoading: false
     };
   },
   computed: {
@@ -2008,8 +2008,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
+    this.isLoading = true;
     var request = axios.get("/api/posts").then(function (response) {
-      return _this.posts = response.data;
+      _this.posts = response.data;
+      _this.isLoading = false;
     });
   }
 });
@@ -2038,17 +2040,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      posts: ''
+      posts: '',
+      isLoading: true
     };
   },
   created: function created() {
     var _this = this;
 
+    this.isLoading = true;
     axios.get("/api/posts/".concat(this.$route.params.id)).then(function (response) {
-      return _this.posts = response.data;
+      _this.posts = response.data;
+      _this.isLoading = false;
     });
   }
 });
@@ -2080,7 +2087,8 @@ vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default().use('Vue');
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default().use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default);
-vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default().component('app-component', __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue").default); // import routers from './router.js'
+vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default().component('app-component', __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue").default);
+vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default().component('footer-component', __webpack_require__(/*! ./components/Footer.vue */ "./resources/js/components/Footer.vue").default); // import routers from './router.js'
 
 
 
@@ -2136,7 +2144,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nhtml{\r\n    font-family: sans-serif;\r\n    min-height: 100%;\n}\nbody{\r\n    padding: 0;\r\n    margin: 0;\r\n    background-color: rgba(214, 214, 214, 0.363);\n}\n.pembungkus{\r\n    display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\n}\n.container{\r\n    background-color: white;\r\n    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0,0.4px);\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nhtml{\r\n    font-family: sans-serif;\r\n    min-height: 100%;\n}\nbody{\r\n    padding: 0;\r\n    margin: 0;\r\n    background-color: rgba(214, 214, 214, 0.363);\n}\n.pembungkus{\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: 100vh;\n}\n.wrapper{\r\n    background-color: white;\r\n    box-shadow: 1px 1px 15px 3px rgba(0, 0, 0,0.4px);\n}\n.footer{\r\n    position: absolute;\r\n    bottom: 0;\r\n    width: 100%;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2184,7 +2192,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ndiv[data-v-61a7c374]{\r\n    height: auto;\n}\nfooter[data-v-61a7c374]{\r\n    /* position: static;\r\n    bottom: 0; */\r\n    background-color: grey;\r\n    padding: 1rem; \r\n    width: 100%;\n}\np[data-v-61a7c374]{\r\n    color: white;\r\n    font-size: 1.2rem;\r\n    text-align: center;\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ndiv[data-v-61a7c374]{\r\n    height: auto;\n}\nfooter[data-v-61a7c374]{\r\n    background-color: grey;\r\n    padding: 1rem; \r\n    width: 100%;\n}\np[data-v-61a7c374]{\r\n    color: white;\r\n    font-size: 1.2rem;\r\n    text-align: center;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3557,9 +3565,7 @@ var render = function() {
     [
       _c("app-bar"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [_c("router-view")], 1),
-      _vm._v(" "),
-      _c("the-footer")
+      _c("div", { staticClass: "wrapper" }, [_c("router-view")], 1)
     ],
     1
   )
@@ -3878,12 +3884,14 @@ var render = function() {
       _c(
         "router-link",
         { attrs: { to: { name: "post", params: { id: _vm.id } } } },
-        [_vm._v("more..")]
+        [
+          _c(
+            "h5",
+            { staticClass: "card-header text-center ", staticStyle: {} },
+            [_vm._v("\n        " + _vm._s(_vm.title) + "\n    ")]
+          )
+        ]
       ),
-      _vm._v(" "),
-      _c("h5", { staticClass: "card-header text-center ", staticStyle: {} }, [
-        _vm._v(_vm._s(_vm.title))
-      ]),
       _vm._v(" "),
       _c("p", { staticClass: "card-body" }, [_vm._v(_vm._s(_vm.content))])
     ],
@@ -3914,36 +3922,52 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "container" },
-      _vm._l(_vm.rows, function(row) {
-        return _c(
+    !_vm.isLoading
+      ? _c(
           "div",
-          {
-            key: "row" + row,
-            staticClass: "row mb-1",
-            staticStyle: { "background-color": "rgba(245, 136, 141, 0.27)" }
-          },
-          _vm._l(
-            _vm.posts.slice((row - 1) * _vm.columns, row * _vm.columns),
-            function(post, column) {
-              return _c(
-                "div",
-                {
-                  key: "row" + row + column,
-                  staticClass: "col p-0 d-flex align-content-stretch "
-                },
-                [_c("app-component", _vm._b({}, "app-component", post, false))],
-                1
-              )
-            }
-          ),
+          { staticClass: "container" },
+          _vm._l(_vm.rows, function(row) {
+            return _c(
+              "div",
+              {
+                key: "row" + row,
+                staticClass: "row mb-1",
+                staticStyle: { "background-color": "rgba(245, 136, 141, 0.27)" }
+              },
+              _vm._l(
+                _vm.posts.slice((row - 1) * _vm.columns, row * _vm.columns),
+                function(post, column) {
+                  return _c(
+                    "div",
+                    {
+                      key: "row" + row + column,
+                      staticClass: "col p-0 d-flex align-content-stretch "
+                    },
+                    [
+                      _c(
+                        "app-component",
+                        _vm._b({}, "app-component", post, false)
+                      )
+                    ],
+                    1
+                  )
+                }
+              ),
+              0
+            )
+          }),
           0
         )
-      }),
-      0
-    )
+      : _c("div", { staticClass: "d-flex justify-content-around mt-5" }, [
+          _c(
+            "p",
+            {
+              staticClass: "badge p-3",
+              staticStyle: { "background-color": "rgba(191, 255, 144, 1)" }
+            },
+            [_vm._v("loading data...")]
+          )
+        ])
   ])
 }
 var staticRenderFns = []
@@ -3970,12 +3994,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "card" }, [
-      _c("h5", { staticClass: "card-header text-center ", staticStyle: {} }, [
-        _vm._v("\n        " + _vm._s(_vm.posts.title) + "\n    ")
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "card-body" }, [_vm._v(_vm._s(_vm.posts.content))])
+    _c("hr"),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      !_vm.isLoading
+        ? _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-8" }, [
+              _vm._v(_vm._s(_vm.posts.title))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _vm._v(_vm._s(_vm.posts.content))
+            ])
+          ])
+        : _c("div", { staticClass: "d-flex justify-content-around mt-5" }, [
+            _c(
+              "p",
+              {
+                staticClass: "badge p-3",
+                staticStyle: { "background-color": "rgba(191, 255, 144, 1)" }
+              },
+              [_vm._v("loading data...")]
+            )
+          ])
     ])
   ])
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <div class="container" v-if="!isLoading">
             <div class="row mb-1" style="background-color:rgba(245, 136, 141, 0.27)"
             v-for="row in rows"
             :key="'row' + row">
@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>   
+        <div v-else class="d-flex justify-content-around mt-5"><p class="badge p-3" style="background-color:rgba(191, 255, 144, 1)">loading data...</p></div>
     </div>
 </template>
 
@@ -25,8 +26,9 @@ export default {
     data(){
         return{
             posts : null,
-            id : null,
-            columns: 3
+            // id : null,
+            columns: 3,
+            isLoading : false,
         } 
     },
     computed:{
@@ -37,8 +39,11 @@ export default {
         }
     },
     created(){ 
+        this.isLoading = true;
         const request = axios.get("/api/posts")
-        .then(response => (this.posts = response.data))
+        .then(response => {
+            this.posts = response.data;
+            this.isLoading=false});
     }
     
 }

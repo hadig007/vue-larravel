@@ -11,8 +11,6 @@ div{
     height: auto;
 }
 footer{
-    /* position: static;
-    bottom: 0; */
     background-color: grey;
     padding: 1rem; 
     width: 100%;

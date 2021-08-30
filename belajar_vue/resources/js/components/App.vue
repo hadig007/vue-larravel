@@ -1,20 +1,18 @@
 <template>
     <div >
         <app-bar></app-bar>
-        <div class="container">
+        <div class="wrapper">
         <router-view></router-view>
         </div>
-        <the-footer></the-footer>
     </div>
 </template>
 
 <script>
 import AppBar from './Appbar.vue';
-import TheFooter from './Footer.vue';
+
 export default {
     components : {
         AppBar,
-        TheFooter
     },
    
 }
@@ -32,11 +30,16 @@ body{
 }
 .pembungkus{
     display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
 }
-.container{
+.wrapper{
     background-color: white;
     box-shadow: 1px 1px 15px 3px rgba(0, 0, 0,0.4px);
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 </style>
