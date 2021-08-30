@@ -16,12 +16,18 @@ import Home from './components/pages/Home.vue'
 import About from './components/pages/About.vue'
 import Services from './components/pages/Services.vue'
 import Contact from './components/pages/Contact.vue'
+import Post from './components/pages/app/post/Post.vue'
 
 const routes =[ 
     {
     path : '/home',
     component: Home,
     name: 'home'
+    },
+    {
+    path : '/home/post/:id',
+    component: Post,
+    name: 'post'
     },
     {
     path : '/about',

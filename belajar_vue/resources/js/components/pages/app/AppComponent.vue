@@ -1,6 +1,7 @@
 <template>
     <div class="card m-3 p-0">
-        <h3 class="card-title text-center">{{ title }}</h3>
+        <router-link :to="{ name : 'post', params:{id} }">more..</router-link>
+        <h5 class="card-header text-center " style="rgba(151, 151, 145, 1)">{{ title }}</h5>
         <p class="card-body">{{ content }}</p>
     </div>
 </template>
@@ -10,6 +11,7 @@ export default {
     props : [
         'title',
         'content',
+        'id'
     ]
 }
 </script>

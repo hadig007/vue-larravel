@@ -1,17 +1,15 @@
 <template>
     <div>
         <div class="container">
-            rows {{ rows }}
-            <div class="row bg-info mb-1"
+            <div class="row mb-1" style="background-color:rgba(245, 136, 141, 0.27)"
             v-for="row in rows"
             :key="'row' + row">
                 <div class="col p-0 d-flex align-content-stretch "
                 v-for="(post, column) in posts.slice((row - 1) * columns, row * columns)"
                 :key="'row' + row + column">
-                    <list-one
-                    :title="post.title"
-                    :content="post.content"
-                    ></list-one>
+                        <app-component
+                    v-bind="post"
+                    ></app-component>
                 </div>
             </div>
         </div>   
@@ -19,32 +17,15 @@
 </template>
 
 <script>
-import ListOne from './App1.vue'
-import ListTwo from './App2.vue'
-import ListThree from './App3.vue'
-import ListFour from './App4.vue'
-import ListFive from './App5.vue'
-import ListSix from './App6.vue'
-import ListSeven from './App7.vue'
-import ListEight from './App8.vue'
-import ListNine from './App9.vue'
-import ListTen from './App10.vue'
+import AppComponent from './AppComponent.vue'
 export default {
     components : {
-        ListOne,
-        ListTwo,
-        ListThree,
-        ListFour,
-        ListFive,
-        ListSix,
-        ListSeven,
-        ListEight,
-        ListNine,
-        ListTen,
+        AppComponent,
     },
     data(){
         return{
             posts : null,
+            id : null,
             columns: 3
         } 
     },
@@ -56,7 +37,8 @@ export default {
         }
     },
     created(){ 
-        const request = axios.get("/api/posts").then(response => (this.posts = response.data))
+        const request = axios.get("/api/posts")
+        .then(response => (this.posts = response.data))
     }
     
 }
