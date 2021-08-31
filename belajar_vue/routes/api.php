@@ -26,5 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return Post::findOrFail($abc);
 // });
 
-Route::get('posts',[PostController::class,'index']);
-Route::get('posts/{id}',[PostController::class,'show']);
+// Route::get('posts',[PostController::class,'index']);
+// Route::get('posts/{id}',[PostController::class,'show']);
+
+Route::apiResource('posts', PostController::class )->only(['index','show']);

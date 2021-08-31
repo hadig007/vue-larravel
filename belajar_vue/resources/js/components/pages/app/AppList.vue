@@ -4,7 +4,7 @@
             <div class="row mb-1" style="background-color:rgba(245, 136, 141, 0.27)"
             v-for="row in rows"
             :key="'row' + row">
-                <div class="col p-0 d-flex align-content-stretch "
+                <div class="col-md p-0 d-flex align-content-stretch "
                 v-for="(post, column) in posts.slice((row - 1) * columns, row * columns)"
                 :key="'row' + row + column">
                         <app-component

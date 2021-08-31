@@ -3941,7 +3941,7 @@ var render = function() {
                     "div",
                     {
                       key: "row" + row + column,
-                      staticClass: "col p-0 d-flex align-content-stretch "
+                      staticClass: "col-md p-0 d-flex align-content-stretch "
                     },
                     [
                       _c(
