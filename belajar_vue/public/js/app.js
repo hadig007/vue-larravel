@@ -2010,7 +2010,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.isLoading = true;
     var request = axios.get("/api/posts").then(function (response) {
-      _this.posts = response.data;
+      _this.posts = response.data.data;
       _this.isLoading = false;
     });
   }
@@ -2054,7 +2054,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.isLoading = true;
     axios.get("/api/posts/".concat(this.$route.params.id)).then(function (response) {
-      _this.posts = response.data;
+      _this.posts = response.data.data;
       _this.isLoading = false;
     });
   }

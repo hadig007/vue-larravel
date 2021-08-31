@@ -42,7 +42,7 @@ export default {
         this.isLoading = true;
         const request = axios.get("/api/posts")
         .then(response => {
-            this.posts = response.data;
+            this.posts = response.data.data;
             this.isLoading=false});
     }
     

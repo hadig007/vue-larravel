@@ -22,7 +22,7 @@ export default {
     created(){
         this.isLoading =  true
         axios.get(`/api/posts/${this.$route.params.id}`)
-        .then(response => {this.posts = response.data;
+        .then(response => {this.posts = response.data.data;
         this.isLoading = false});
     }
 }
