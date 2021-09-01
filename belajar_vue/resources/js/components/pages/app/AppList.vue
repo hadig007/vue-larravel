@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="container" v-if="!isLoading">
-            <div class="row mb-1" style="background-color:rgba(245, 136, 141, 0.27)"
+        <div class="container p-2" v-if="!isLoading">
+            <div class="row" style="background-color:rgba(245, 136, 141, 0.27)"
             v-for="row in rows"
             :key="'row' + row">
                 <div class="col-md p-0 d-flex align-content-stretch "
